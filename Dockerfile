@@ -1,6 +1,7 @@
 FROM php:8.2-apache
 
-# Install mysqli extension
-RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+# Install MySQL extensions and client
+RUN docker-php-ext-install mysqli pdo pdo_mysql && \
+    apt-get update && apt-get install -y default-mysql-client
 
 COPY . /var/www/html/
