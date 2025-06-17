@@ -2,18 +2,16 @@
 
 
 
-// Database connection (replace with your credentials)
-$db_host = "localhost";
- $db_user = "root";
- $db_pass = "";
-$db_name = "marketplace_db";
+// Change from:
+$conn = new mysqli('localhost', 'root', 'password', 'marketplace_db');
 
-// $db_host = "localhost";
-// $db_user = "root";
-// $db_pass = "";
-// $db_name = "marketplace_db";
-
-$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
+// To (for Render):
+$conn = new mysqli(
+    getenv('https://supportindeed.com/phpMyAdmin/?server=1&xck=523290911'),    // e.g., 'dpg-xxxxxx-a.oregon-postgres.render.com'
+    getenv('4593147_marketplace'),
+    getenv('aY77%Lql2MLZtru^'),
+    getenv('4593147_marketplace')
+);
 
 // Check connection
 if ($conn->connect_error) {
