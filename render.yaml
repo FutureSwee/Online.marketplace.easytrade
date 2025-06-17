@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: your-app-name
+    runtime: php
+    buildCommand: ""   # Leave empty for PHP
+    startCommand: ""   # Leave empty for PHP
+    env: php
